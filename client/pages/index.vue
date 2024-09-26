@@ -2,7 +2,7 @@
     <header>
         <h2>Главная страница</h2>
     </header>
-    <main>
+    <!-- <main>
         <article v-for="(post, index) in posts" :key="post.id">
             <h3>{{ post.title }}</h3>
             <img src="https://i.pinimg.com/originals/8e/57/85/8e578585b383dc11bc8753de50819d34.jpg" alt="Обложка статьи">
@@ -13,9 +13,9 @@
             </ul>
             <nuxt-link :to="'/post/' + (index + 1)">Подробнее</nuxt-link>
         </article>
-    </main>
+    </main> -->
 </template>
-<style scoped>
+<!-- <style scoped>
     main {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -52,4 +52,4 @@
 <script setup>
   const dataTwice = await $fetch('https://dummyjson.com/posts')
   const posts = dataTwice.posts
-</script>
+</script> -->

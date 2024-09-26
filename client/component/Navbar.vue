@@ -5,6 +5,7 @@
             <li><nuxt-link to="/about">About</nuxt-link></li>
             <li><nuxt-link to="/contact">Contact</nuxt-link></li>
         </ul>
+
     </nav>
 </template>
 
@@ -14,6 +15,7 @@
 ul {
     display: flex;
     list-style: none;
+    gap: 10px;
     padding: 0;
 }
 
