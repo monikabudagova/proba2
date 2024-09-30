@@ -1,12 +1,4 @@
 <template>
     <Navbar />
     <NuxtPage />
-</template>
-
-<style scoped>
-
-</style>
-
-<script setup>
-
-</script>
+  </template>
