@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,12 +18,13 @@
       "unique": true
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files",
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "body": {
       "type": "richtext",
@@ -30,6 +32,12 @@
     },
     "desc": {
       "type": "text"
+    },
+    "gategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gategory.gategory",
+      "inversedBy": "posts"
     }
   }
 }

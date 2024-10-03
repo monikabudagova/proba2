@@ -3,6 +3,7 @@
     <nav>
         <ul>
             <li><NuxtLink to="/blog">блог</NuxtLink></li>
+            <!-- <li><NuxtLink :to="'/category/' + post.categories[0].id">{{ post.categories[0].title }}</NuxtLink></li> -->
             <li>{{ post.title }}</li>
         </ul>
     </nav>
@@ -18,12 +19,10 @@
 import MarkdownIt from "markdown-it";
 const markdown = new MarkdownIt();
 
-
-
 const { id } = useRoute().params
 
-const api = await $fetch(`http://localhost:1337/api/posts?populate=*`)
-const posts = api.data[id]
+const api = await $fetch(`http://localhost:1337/api/categories?populate=*`)
+const post = api.data[id]
 const mark = markdown.render(post.body);
 
 const base_url = 'http://localhost:1337'
