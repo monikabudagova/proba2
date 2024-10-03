@@ -5,6 +5,9 @@
 </template>
 
 <style>
+*{
+    margin: 0;
+}
 html,body, #__nuxt {
     width: 100%;
     height: 100%;
