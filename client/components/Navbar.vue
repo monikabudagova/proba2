@@ -5,6 +5,7 @@
             <li><NuxtLink to="/blog">Блог</NuxtLink></li>
             <li><NuxtLink to="/contact">Контакты</NuxtLink></li>
         </ul>
+        
     </nav>
 </template>
 
