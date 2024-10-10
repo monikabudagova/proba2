@@ -3,19 +3,40 @@
     <nav>
         <ul>
             <li><NuxtLink to="/blog">Блог</NuxtLink></li>
-            <li><NuxtLink :to="'/category/' + post.categories[0].documentId">{{ post.categories[0].title }}</NuxtLink></li>
+            <li><NuxtLink :style="'background-color:'+post.gategories[0].bg" :to="'/category/' + post.gategories[0].documentId">{{ post.gategories[0].title }}</NuxtLink></li>
             <li><strong>{{ post.title }}</strong></li>
         </ul>
     </nav>
     <!-- тело статьи -->
     <main>
         <h1>{{ post.title }}</h1>
+        <p class="data">Дата публикации <span>{{ post.publishedAP }}</span></p>
         <img :src=base_url+post.img.url :alt=post.img.alternativeText>
         <div v-html="mark"></div>
     </main>
 </template>
 
 <style scoped>
+
+    nav{
+        padding: 30px;
+        border-radius: 24px;
+    }
+    .data{
+        display: flex;
+        align-items: start;
+        gap: 20px;
+    }
+    .data span{
+        display: inline-block;
+        text-wrap: nowrap;
+        width: 112px;
+        overflow: hidden;
+    }
+    main{
+        padding: 40px;
+        font-size: 24px;
+    }
     li::before {
         content: ">>";
         margin-right: 10px;

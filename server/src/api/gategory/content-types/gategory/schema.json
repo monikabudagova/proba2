@@ -4,7 +4,8 @@
   "info": {
     "singularName": "gategory",
     "pluralName": "gategories",
-    "displayName": "Gategory"
+    "displayName": "Gategory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,9 @@
       "relation": "manyToMany",
       "target": "api::post.post",
       "mappedBy": "gategories"
+    },
+    "bg": {
+      "type": "string"
     }
   }
 }

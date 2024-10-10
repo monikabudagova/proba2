@@ -519,6 +519,7 @@ export interface ApiGategoryGategory extends Struct.CollectionTypeSchema {
     singularName: 'gategory';
     pluralName: 'gategories';
     displayName: 'Gategory';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -528,6 +529,7 @@ export interface ApiGategoryGategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     posts: Schema.Attribute.Relation<'manyToMany', 'api::post.post'>;
+    bg: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
