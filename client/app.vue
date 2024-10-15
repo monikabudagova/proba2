@@ -1,5 +1,5 @@
 <template>
-    <NuxtLoadingIndicator duration="5000"/>
+    <NuxtLoadingIndicator throttle="0"/>
     <Navbar />
     <NuxtPage />
     <Footer />

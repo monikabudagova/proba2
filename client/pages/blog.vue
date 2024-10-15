@@ -6,7 +6,7 @@
         <h3>{{ post.title }}</h3>
         <img :src="base_url + post.img.url" :alt=post.img.alternativeText>
         <p>{{ post.desc }}</p>
-        <NuxtLink :to="'/post/' + post.documentId">Подробнее</NuxtLink>
+        <NuxtLink :to="'/post/' + post.documentId">˚˖𓍢ִ໋🦢˚</NuxtLink>
       </article>
   </main>
 
@@ -20,6 +20,13 @@ const base_url = "http://localhost:1337"
 </script>
 
 <style scoped>
+
+h2, main{
+  color: #CD4662;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -48,7 +55,7 @@ main {
 }
 
 article {
-  background-color: #f5f5f5;
+  background-color: #AEC289;
   padding: 10px;
   border-radius: 10px;
   height: max-content;

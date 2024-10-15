@@ -8,9 +8,8 @@
 
 <style scoped>
 
-main{
-    height: 1200px;
-    color: rgb(82, 47, 2);
-    background-color: bisque;
+main, h2{
+    color: #CD4662;
+    background-color: #AEC289;
 }
 </style>

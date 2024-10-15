@@ -16,7 +16,7 @@
 <script setup>
 const { id } = useRoute().params
 
-const api = await $fetch(`http://localhost:1337/api/gategories/${id}?populate=posts.img`)
+const api = await $fetch(`http://localhost:1337/api/gategories/${id}?populate=posts.img&populate=posts.gategories`)
 // const filteredPosts = api.data.filter(post => post.id == id)
 const posts = api.data.posts
 
