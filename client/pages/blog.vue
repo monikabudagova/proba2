@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-const api = await $fetch('http://localhost:1337/api/posts?')/////////добавить
+const api = await $fetch('http://localhost:1337/api/posts?')/////////добавить 
 const posts = api.data
 
 const base_url = "http://localhost:1337"
