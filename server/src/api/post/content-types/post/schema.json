@@ -32,12 +32,6 @@
     },
     "desc": {
       "type": "text"
-    },
-    "gategories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::gategory.gategory",
-      "inversedBy": "posts"
     }
   }
 }

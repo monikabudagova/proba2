@@ -485,6 +485,36 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    bg: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
+  };
+}
+
 export interface ApiConfigConfig extends Struct.SingleTypeSchema {
   collectionName: 'configs';
   info: {
@@ -513,38 +543,6 @@ export interface ApiConfigConfig extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiGategoryGategory extends Struct.CollectionTypeSchema {
-  collectionName: 'gategories';
-  info: {
-    singularName: 'gategory';
-    pluralName: 'gategories';
-    displayName: 'Gategory';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    posts: Schema.Attribute.Relation<'manyToMany', 'api::post.post'>;
-    bg: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::gategory.gategory'
-    >;
-  };
-}
-
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
@@ -563,10 +561,6 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     img: Schema.Attribute.Media<'files' | 'images'>;
     body: Schema.Attribute.RichText & Schema.Attribute.Required;
     desc: Schema.Attribute.Text;
-    gategories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::gategory.gategory'
-    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -954,8 +948,8 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::category.category': ApiCategoryCategory;
       'api::config.config': ApiConfigConfig;
-      'api::gategory.gategory': ApiGategoryGategory;
       'api::post.post': ApiPostPost;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
