@@ -21,7 +21,7 @@
         { rel: 'icon', type: 'image/x-icon', href: base+config.fanicon.url },
       ],
       bodyAttrs:{
-        class: 'container mx-auto'
+        class: 'container mx-auto bg-white dark:bg-gray-900'
       }
     })
   </script>

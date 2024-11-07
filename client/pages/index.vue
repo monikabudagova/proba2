@@ -5,7 +5,7 @@
 </template>
 <style scoped>
 main{
-    color: #CD4662;
-    background-color: #AEC289;
+    color: #000000;
+    background-color: #95B1EE;
 }
 </style>
