@@ -1,0 +1,38 @@
+{
+    "kind": "singleType",
+    "collectionName": "configs",
+    "info": {
+        "singularName": "config",
+        "pluralName": "configs",
+        "displayName": "Config"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "desc": {
+            "type": "text",
+            "required": true
+        },
+        "keywork": {
+            "type": "text",
+            "required": true
+        },
+        "fanicon": {
+            "allowedTypes": [
+                "images",
+                "files"
+            ],
+            "type": "media",
+            "multiple": true
+        },
+        "canonical": {
+            "type": "string"
+        }
+    }
+}
